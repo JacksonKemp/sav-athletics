@@ -1,0 +1,15 @@
+{
+  "name": "sav-athletics",
+  "version": "1.0.0",
+  "description": "Sav Athletics website project",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
