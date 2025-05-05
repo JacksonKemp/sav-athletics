@@ -339,12 +339,19 @@
                 >
                   <small class="swiper-wrapper">
                     <div class="swiper-slide text-center">
-                      <a
-                        type="button"
-                        data-toggle="modal"
-                        data-target="#run4rescueModal"
-                        >Join The RUN4RESCUE This December</a
-                      >
+                      <a href="#training-camp" style="
+                      background-color: black;
+                      color: white;
+                      text-align: center;
+                      font-family: Poppins, sans-serif;
+                      font-weight: 500;
+                      padding: 10px 0;
+                      display: block;
+                      text-decoration: none;
+                    ">
+                      Triathlon Training Camp coming Winter 2026
+                    </a>
+                    
                     </div>
                   </small>
                 </div>
@@ -541,8 +548,8 @@
                   <a
                     class="header__link nav-link d-inline px-2"
                     link_type="popup_link"
-                    href="book.html"
-                    >Book</a
+                    href="join.html"
+                    >Join</a
                   >
                 </li>
 
@@ -934,183 +941,503 @@
               }
             }
           </style>
+
         </section>
-        <section id="section-08962659595792033">
-          <div id="app-08962659595792033" class="color-palette--none">
-            <div class="container text-center">
-              <div class="section-block text-center">
-                <div class="typography--kicker">DISCOVER YOUR POTENTIAL</div>
+        <div style="
+          background-color: #f5f5f5;
+          padding: 60px 20px;
+          text-align: center;
+          font-family: Poppins, sans-serif;
+        " id="training-camp">
+          <h2 style="font-size: 28px; margin-bottom: 20px; font-weight: 600;">
+            Triathlon Training Camp coming Winter 2026
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 30px;">
+            Join the Waitlist →
+          </p>
+          <form
+  id="waitlist-form"
+  style="max-width: 400px; margin: 0 auto;"
+>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+    style="
+      padding: 12px;
+      width: 100%;
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 16px;
+    "
+  />
+  <button
+    type="submit"
+    style="
+      background-color: #336E75;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 500;
+    "
+  >
+    Submit
+  </button>
+</form>
 
-                <div class="typography--heading fs-2">
-                  A Program For Everyone
+<script>
+  document.getElementById('waitlist-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    if (response.ok) {
+      alert('Thanks! You’re on the list.');
+      document.getElementById('email').value = '';
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  });
+</script>
+
+        </div>
+        <div style="padding: 60px 20px; font-family: Poppins, sans-serif; max-width: 60%; margin: 0 auto;">
+          <h2 style="font-size: 28px; margin-bottom: 30px; font-weight: 600;">Training Packages</h2>
+          <div style="overflow-x:auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+              <thead>
+                <tr style="background-color: #f2f2f2;">
+                  <th style="padding: 12px; border-bottom: 2px solid #ddd;">Kit Name</th>
+                  <th style="padding: 12px; border-bottom: 2px solid #ddd;">Duration</th>
+                  <th style="padding: 12px; border-bottom: 2px solid #ddd;">Includes</th>
+                  <th style="padding: 12px; border-bottom: 2px solid #ddd;">Best For</th>
+                  <th style="padding: 12px; border-bottom: 2px solid #ddd;">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Potato to Amazo</td>
+                  <td style="padding: 12px;">8 weeks</td>
+                  <td style="padding: 12px;">First-timer plan, mindset tips, race day prep</td>
+                  <td style="padding: 12px;">Your <em>first-ever</em> race</td>
+                  <td style="padding: 12px;">$75</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Cruise Control</td>
+                  <td style="padding: 12px;">12 weeks</td>
+                  <td style="padding: 12px;">Half marathon plan, pacing strategies, recovery tips</td>
+                  <td style="padding: 12px;">Novice to intermediate runners</td>
+                  <td style="padding: 12px;">$95</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Marathon Mission</td>
+                  <td style="padding: 12px;">16 weeks</td>
+                  <td style="padding: 12px;">Long runs, fueling guide, taper tips</td>
+                  <td style="padding: 12px;">Full marathon prep</td>
+                  <td style="padding: 12px;">$120</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Unlock Ultra</td>
+                  <td style="padding: 12px;">20 weeks</td>
+                  <td style="padding: 12px;">Back-to-backs, mental tools, terrain support</td>
+                  <td style="padding: 12px;">Ultra runners (new or experienced)</td>
+                  <td style="padding: 12px;">$165</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Time to Tri</td>
+                  <td style="padding: 12px;">12 weeks</td>
+                  <td style="padding: 12px;">Balanced S/B/R plan, brick workouts</td>
+                  <td style="padding: 12px;">Sprint or Olympic triathletes</td>
+                  <td style="padding: 12px;">$110</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Becoming Iron</td>
+                  <td style="padding: 12px;">16 / 18 weeks</td>
+                  <td style="padding: 12px;">70.3 and Full Ironman prep, high-volume training</td>
+                  <td style="padding: 12px;">Ready to tackle an ironman</td>
+                  <td style="padding: 12px;">$200</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px; font-weight: 600;">Cut & Guts</td>
+                  <td style="padding: 12px;">12 weeks</td>
+                  <td style="padding: 12px;">Shred-focused strength + cardio, macro tips</td>
+                  <td style="padding: 12px;">Anyone in a cutting phase</td>
+                  <td style="padding: 12px;">$120</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+          <p style="margin-top: 24px; font-size: 14px; color: #666;">
+            ⚠️ These kits are designed based on your questionnaire. <em>No interaction with coach Sav is included.</em> For custom coaching, check out the monthly programs below.
+          </p>
+        </div>
+
+        <div style="background-color: #f4f8fb; padding: 80px 20px;">
+        <div class="section-block text-center">
+          <h2 style="margin: 50px 0 70px;">Monthly Coaching</h2>
+
+          
+          <!-- STYLES -->
+          <style>
+            /* Section background and layout */
+            .coaching-wrapper {
+              background-color: #f4f8fb;
+              padding: 60px 20px;
+            }
+
+            /* Layout for packages + details */
+            .coaching-section {
+              display: flex;
+              gap: 40px;
+              max-width: 1200px;
+              margin: 0 auto;
+              flex-wrap: wrap;
+            }
+
+            /* Left side: image + package buttons */
+            .coaching-left {
+              flex: 1;
+              min-width: 300px;
+              text-align: center;
+            }
+
+            /* Image stays fixed */
+            .main-coaching-image {
+              width: 100%;
+              max-width: 400px;
+              height: auto;
+              border-radius: 8px;
+              object-fit: cover;
+            }
+
+            /* Package buttons */
+            .coaching-buttons {
+              display: flex;
+              justify-content: center;
+              gap: 12px;
+              margin-top: 20px;
+              flex-wrap: wrap;
+            }
+
+            .coaching-buttons button {
+              background-color: #eee;
+              border: none;
+              padding: 12px 18px;
+              font-family: Poppins, sans-serif;
+              font-weight: 500;
+              border-radius: 6px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+            }
+
+            .coaching-buttons button:hover {
+              background-color: #d1e7f0;
+            }
+
+            /* Right panel: coaching details */
+            .coaching-details {
+              flex: 1;
+              min-width: 300px;
+              text-align: left;
+              font-family: Poppins, sans-serif;
+            }
+
+            .fade-out {
+              opacity: 0;
+            }
+            .coaching-buttons span {
+              background-color: #eee;
+              padding: 12px 18px;
+              font-family: Poppins, sans-serif;
+              font-weight: 500;
+              border-radius: 6px;
+              cursor: pointer;
+              transition: background-color 0.3s;
+            }
+
+            .coaching-buttons span:hover {
+              background-color: #d1e7f0;
+            }
+
+
+
+
+            @media (max-width: 768px) {
+              .coaching-section {
+                flex-direction: column;
+              }
+
+              .coaching-buttons {
+                justify-content: center;
+              }
+            }
+          </style>
+
+          <!-- HTML -->
+          <div class="section-block coaching-section">
+
+              <div style="display: flex; gap: 40px; align-items: flex-start; padding: 0 60px;">
+                <!-- LEFT SIDE -->
+                <div style="padding-right: 100px;">
+                  <img id="coachingImage" src="assets/images/explore.png" style="max-width: 300px; border-radius: 12px;" />
+                  <div class="coaching-buttons" style="margin-top: 24px;">
+                    <span onmouseover="showPackage('base')">Base Camp</span>
+                    <span onmouseover="showPackage('ascent')">Ascent</span>
+                    <span onmouseover="showPackage('summit')">Summit</span>
+                  </div>
                 </div>
+              
+                <!-- RIGHT SIDE -->
+                <div style="flex: 1; text-align: left;">
+                  <div id="defaultCoachingText">
+                    <h3>Build Your Own Beast</h3>
+                    <p>Got a goal that doesn’t fit in a box? We'll make a custom plan and get you out slayin’</p>
+
+                    <h3>Single Sessions | $75HR</h3>
+                    <ul>
+                      <li>Swim → Pool & Open Water</li>
+                      <li>Run → Track & Trail</li>
+                    </ul>
+
+                    <h3>Add-On Options:</h3>
+                    <ul>
+                      <li><strong>Race Simulation Planning</strong> – $50</li>
+                      <li><strong>Nutrition Consult</strong> – $60</li>
+                      <li><strong>Race Day Strategy Session (30 min)</strong> – $45</li>
+                      <li><strong>Shred Phase Add-on (4 weeks)</strong> – $40</li>
+                    </ul>
+                  </div>
+
+                  <div id="dynamicCoachingText" style="display: none;"></div>
+                </div>
+
+                <script>
+                  const packages = {
+                    base: {
+                      img: "assets/images/BaseCamp.png",
+                      title: "Base Camp | $150",
+                      content: `
+                        <p><strong>Solid, simple, structured.</strong></p>
+                        <ul>
+                          <li>Personalized training plan</li>
+                          <li>1x Monthly coach check-in via text</li>
+                          <li>Adjustments every 4 weeks</li>
+                          <li>Goal-focused programming</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Athletes who just want a plan with light accountability.</p>
+                      `
+                    },
+                    ascent: {
+                      img: "assets/images/ascent.png",
+                      title: "Ascent | $300",
+                      content: `
+                        <p><strong>Support with strategy.</strong></p>
+                        <ul>
+                          <li>Custom plan updated every 2 weeks</li>
+                          <li>1x monthly virtual check-ins (15 mins)</li>
+                          <li>Ongoing form/video reviews (2/month)</li>
+                          <li>Text support (Tues & Thurs)</li>
+                          <li>Gear and race day consultation</li>
+                        </ul>
+                        <p><strong>Best for:</strong> Committed athletes looking to improve performance with guidance.</p>
+                      `
+                    },
+                    summit: {
+                      img: "assets/images/summit.png",
+                      title: "Summit | $500",
+                      content: `
+                        <p><strong>All-in performance coaching.</strong></p>
+                        <ul>
+                          <li>Weekly adaptive plan (via Training Peaks)</li>
+                          <li>1x Monthly 1:1 calls (30 mins)</li>
+                          <li>Unlimited form checks</li>
+                          <li>Strength + mobility add-ons</li>
+                          <li>Nutrition & race strategy guidance</li>
+                          <li>Text support (Tues & Thurs)</li>
+                          <li>Priority access + 10% off Race Kits</li>
+                        </ul>
+                        <p><strong>Best for:</strong> High-achievers, competitive athletes, or those chasing PRs & podiums.</p>
+                      `
+                    }
+                  };
+
+                  const defaultText = document.getElementById("defaultCoachingText");
+                  const dynamicText = document.getElementById("dynamicCoachingText");
+                  const image = document.getElementById("coachingImage");
+
+                  function showPackage(key) {
+                    const pack = packages[key];
+                    defaultText.style.display = "none";
+                    dynamicText.style.display = "block";
+                    image.src = pack.img;
+                    dynamicText.innerHTML = `<h3>${pack.title}</h3>${pack.content}`;
+                  }
+
+                  function resetPackage() {
+                    defaultText.style.display = "block";
+                    dynamicText.style.display = "none";
+                    image.src = "assets/images/explore.png"; // Reset to base/default image
+                  }
+
+                  // Attach events after DOM loads
+                  window.addEventListener("DOMContentLoaded", () => {
+                    document.querySelector('[onmouseover="showPackage(\'base\')"]').addEventListener("mouseleave", resetPackage);
+                    document.querySelector('[onmouseover="showPackage(\'ascent\')"]').addEventListener("mouseleave", resetPackage);
+                    document.querySelector('[onmouseover="showPackage(\'summit\')"]').addEventListener("mouseleave", resetPackage);
+                  });
+                </script>
+
+              
+
+
+          
+          </div>
+          </div>
+          
+        <!-- Base Camp Modal -->
+        <div class="modal fade" id="baseCampModal" tabindex="-1" role="dialog" aria-labelledby="baseCampLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="baseCampLabel">Base Camp | $150</h3>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
               </div>
-
-              <div class="grid-08962659595792033">
-                <div>
-                  <a
-                    class="d-block text-reset text-decoration-none"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#thestartModal"
-                  >
-                    <div
-                      class="utility__media-mask"
-                      style="margin-bottom: 10px"
-                    >
-                      <div
-                        class="utility__media-ratio utility__media-ratio--square"
-                      >
-                        <img
-                          loading="lazy"
-                          src="assets/images/2.png"
-                          class="w-100 utility--rounded"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="text-start">
-                      <div class="product-name-08962659595792033">
-                        The Start
-                      </div>
-
-                      <span class="product-price-08962659595792033">
-                        $120.00
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div>
-                  <a
-                    class="d-block text-reset text-decoration-none"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#thegrindModal"
-                  >
-                    <div
-                      class="utility__media-mask"
-                      style="margin-bottom: 10px"
-                    >
-                      <div
-                        class="utility__media-ratio utility__media-ratio--square"
-                      >
-                        <img
-                          loading="lazy"
-                          src="assets/images/3.png"
-                          class="w-100 utility--rounded"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="text-start">
-                      <div class="product-name-08962659595792033">
-                        The Grind
-                      </div>
-
-                      <span class="product-price-08962659595792033">
-                        $299.00
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div>
-                  <a
-                    class="d-block text-reset text-decoration-none"
-                    type="button"
-                    data-toggle="modal"
-                    data-target="#theapexModal"
-                  >
-                    <div
-                      class="utility__media-mask"
-                      style="margin-bottom: 10px"
-                    >
-                      <div
-                        class="utility__media-ratio utility__media-ratio--square"
-                      >
-                        <img
-                          loading="lazy"
-                          src="assets/images/4.png"
-                          class="w-100 utility--rounded"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="text-start">
-                      <div class="product-name-08962659595792033">The Apex</div>
-
-                      <span class="product-price-08962659595792033">
-                        $499.00
-                      </span>
-                    </div>
-                  </a>
-                </div>
+              <div class="modal-body">
+                <img src="basecamp.jpg" alt="Base Camp" style="width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 8px;" />
+                <p><strong>Solid, simple, structured.</strong></p>
+                <ul>
+                  <li>Personalized training plan</li>
+                  <li>1x Monthly coach check-in via text</li>
+                  <li>Adjustments every 4 weeks</li>
+                  <li>Goal-focused programming</li>
+                </ul>
+                <p><strong>Best for:</strong> Athletes who just want a plan with light accountability.</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <script type="application/javascript">
-            Vue.createApp({
-              data() {
-                return {};
-              },
-              mounted() {},
-              computed: {},
-              methods: {},
-              mixins: [MoneyMixin],
-              compilerOptions: {
-                delimiters: ["${", "}"],
-              },
-            }).mount("#app-08962659595792033");
-          </script>
+        <!-- Ascent Modal -->
+        <div class="modal fade" id="ascentModal" tabindex="-1" role="dialog" aria-labelledby="ascentLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="ascentLabel">Ascent | $300</h3>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              </div>
+              <div class="modal-body">
+                <img src="basecamp.jpg" alt="Base Camp" style="width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 8px;" />
+                <p><strong>Support with strategy.</strong></p>
+                <ul>
+                  <li>Custom plan updated every 2 weeks</li>
+                  <li>1x monthly virtual check-ins (15 mins)</li>
+                  <li>Ongoing form/video reviews (up to 2 submissions/month)</li>
+                  <li>Text support (Tuesday & Thursdays)</li>
+                  <li>Gear and race day consultation</li>
+                </ul>
+                <p><strong>Best for:</strong> Committed athletes looking to improve performance with guidance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <style>
-            #app-08962659595792033 {
-              margin-top: 0px;
-              margin-bottom: 0px;
-              padding-top: 75px;
-              padding-bottom: 75px;
-            }
-            #app-08962659595792033 .grid-08962659595792033 {
-              width: 100%;
-              display: grid;
-              grid-auto-columns: 1fr;
-              gap: 25px;
-              grid-gap: 25px;
-              --grid-item-desktop: calc((100% - 25px) / (4 + 1));
-              --grid-item-mobile: calc((100% - 25px) / (2));
-            }
-            @media only screen and (min-width: 769px) {
-              #app-08962659595792033 .grid-08962659595792033 {
-                grid-template-columns: repeat(
-                  auto-fit,
-                  minmax(max(150px, var(--grid-item-desktop)), 1fr)
-                );
-              }
-            }
-            @media only screen and (max-width: 768px) {
-              #app-08962659595792033 .grid-08962659595792033 {
-                grid-template-columns: repeat(
-                  auto-fit,
-                  minmax(
-                    max(var(--grid-item-mobile), var(--grid-item-desktop)),
-                    1fr
-                  )
-                );
-              }
-            }
-            .product-name-08962659595792033 {
-              font-size: 1em;
-              font-weight: 400;
-              margin-bottom: 0px;
-            }
-            .product-price-08962659595792033 {
-              font-size: 1em;
-              font-weight: 400;
-            }
-          </style>
-        </section>
+        <!-- Summit Modal -->
+        <div class="modal fade" id="summitModal" tabindex="-1" role="dialog" aria-labelledby="summitLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="summitLabel">Summit | $500</h3>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              </div>
+              <div class="modal-body">
+                <img src="basecamp.jpg" alt="Base Camp" style="width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 8px;" />
+                <p><strong>All-in performance coaching.</strong></p>
+                <ul>
+                  <li>Weekly updated, fully adaptive plan → comments via Training Peaks</li>
+                  <li>1x Monthly 1:1 calls (30 mins)</li>
+                  <li>Unlimited video form checks + feedback</li>
+                  <li>Strength training + mobility add-ons</li>
+                  <li>Nutrition & race strategy guidance</li>
+                  <li>Text support (Tuesday and Thursdays)</li>
+                  <li>Priority access to Savage events (training camps) and promos</li>
+                  <li>10% off all Race Ready Kits</li>
+                </ul>
+                <p><strong>Best for:</strong> High-achievers, competitive athletes, or those chasing PRs & podiums.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Build Your Own Beast Modal -->
+        <div class="modal fade" id="beastModal" tabindex="-1" role="dialog" aria-labelledby="beastLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="basecamp.jpg" alt="Base Camp" style="width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 8px;" />
+                <h3 class="modal-title" id="beastLabel">Build Your Own Beast</h3>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              </div>
+              <div class="modal-body">
+                <p>Got a goal that doesn’t fit in a box? We'll make a custom plan and get you out slayin’.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Sessions Modal -->
+        <div class="modal fade" id="sessionsModal" tabindex="-1" role="dialog" aria-labelledby="sessionsLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="basecamp.jpg" alt="Base Camp" style="width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 8px;" />
+                <h3 class="modal-title" id="sessionsLabel">Single Sessions | $75HR</h3>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              </div>
+              <div class="modal-body">
+                <ul>
+                  <li>Swim → Pool & Open Water</li>
+                  <li>Run → Track & Trail</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-On Options Modal -->
+        <div class="modal fade" id="addonsModal" tabindex="-1" role="dialog" aria-labelledby="addonsLabel" aria-hidden="true">
+          <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="basecamp.jpg" alt="Base Camp" style="width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 8px;" />
+                <h3 class="modal-title" id="addonsLabel">Add-On Options</h3>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              </div>
+              <div class="modal-body">
+                <ul>
+                  <li><strong>Race Simulation Planning</strong> – $50</li>
+                  <li><strong>Nutrition Consult</strong> – $60</li>
+                  <li><strong>Race Day Strategy Session (30 min)</strong> – $45</li>
+                  <li><strong>Shred Phase Add-on (4 weeks)</strong> – $40</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
         <section id="section-2626135196007846">
           <div id="app-2626135196007846" class="color-palette--none">
             <div class="container">
